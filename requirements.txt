@@ -7,3 +7,4 @@ mamba-ssm>=2.2.2
 causal-conv1d>=1.4.0
 transformers>=4.44.2
 torch>=2.4.1
+marko>=2.1.2
