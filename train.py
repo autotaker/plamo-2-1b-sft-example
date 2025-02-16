@@ -40,7 +40,7 @@ def main():
 
     # Setup data collator
     data_collator = DataCollatorForCompletionOnlyLM(
-        response_template=tokenizer.encode(" Answer:", add_special_tokens=False),
+        response_template=tokenizer.encode(" Answer:\n", add_special_tokens=False),
         tokenizer=tokenizer,
     )
 

@@ -8,7 +8,16 @@ model = AutoModelForCausalLM.from_pretrained(final_output, trust_remote_code=Tru
 import torch
 
 # プロンプトの準備
-prompt = "### Question:\n埼玉の県庁所在地は何市？\n\n### Answer:\n"
+prompt = """
+## システムプロンプト
+あなたは文書検索botです。
+入力された文からそれが含まれる文書タイトルとセクションの見出しを返します。
+
+## 検索する文書
+{paragraph}
+
+## Answer:\n""".format(paragraph = "Plamo2の動かし方")
+
 
 # 推論の実行
 inputs = tokenizer(prompt, return_tensors="pt")
